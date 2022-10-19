@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Descontar Productos</title>
+</head>
+<body>
+    <table class="table table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Producto</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Descontar</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for producto in productos %}
+
+            <tr>
+                <th>{{producto.producto}}</a></th>
+                <th>{{producto.cantidad}}</th>
+                <th><a href="{% url 'ControlStock:Descontar' producto.id_producto %}">Descontar</a></th>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% endblock %}
+</body>
+</html>

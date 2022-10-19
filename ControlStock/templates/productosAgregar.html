@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar</title>
+</head>
+<body>
+    <h4>Agregar Producto</h4>
+    <form method="post">
+
+          <input type="hidden" name="csrfmiddlewaretoken" value="wdYvQsKLAxUcZG4lPLH42J5un6uVJHkljUBL8QfoRgNkli8LLDU5nk8ix9HGztbU">
+          <p><label for="id_suma">Agregar producto:</label> <input type="number" name="suma" required id="id_suma"  value="0"></p>
+    {% csrf_token %}
+    <button type="submit" class="btn btn-primary">Modificar</button>
+    {% endblock %}
+
+</body>
+</html>

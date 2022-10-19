@@ -1,0 +1,20 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Inicio Conin</title>
+</head>
+<body>
+    <h1>Conin Por una Niñez con Esperanza</h1>
+    <h4>
+    <p><a href="{% url 'ControlStock:Productos' %}">Listado de Productos</a></p>
+    <p><a href="{% url 'ControlStock:NuevoProducto' %}">Nuevo Producto</a></p>
+    <p><a href="{% url 'ControlStock:Sumar' %}">Sumar Productos</a></p>
+    <p><a href="{% url 'ControlStock:Restar' %}">Restar Productos</a></p>
+    </h4>
+    {% endblock %}
+</body>
+</html>

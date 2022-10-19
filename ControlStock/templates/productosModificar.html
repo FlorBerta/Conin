@@ -1,0 +1,20 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Modificar Producto</title>
+</head>
+<body>
+    <h4>Modificar Producto</h4>
+	<form method="POST">
+	      {% csrf_token %}
+          {{form.as_p}}
+          <br>
+	<button type="submit" class="btn btn-primary" >Guardar Cambios</button>
+    </form>
+    {% endblock %}
+</body>
+</html>

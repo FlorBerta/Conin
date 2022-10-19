@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Listado de Productos</title>
+</head>
+<body>
+
+    <p>Listado de Productos</p>
+    
+    <table class="table table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Producto</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Observación</th>
+                <th scope="col">Fecha de Vencimiento</th>
+                <th scope="col">Eliminar Producto</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for producto in productos %}
+            <tr>
+                <th><a href="{% url 'ControlStock:Modificar' producto.id_producto %}">{{producto.producto}}</a></th>
+                <th>{{ producto.cantidad }}</th>
+                <th>{{ producto.observacion }}</th>
+                <th>{{ producto.fecha_vencimiento }}</th>                
+                <th><a href="{% url 'ControlStock:Eliminar' producto.id_producto %}">Eliminar</a></th>
+            </tr>
+            {% endfor %}
+
+        </tbody>
+    </table>
+    {% endblock %}
+</body>
+</html>
